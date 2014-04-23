@@ -1,0 +1,36 @@
+/*
+ * This tutorial is courtesy of Mr. Pedro Teixeira. All credits for this go to him.
+*/
+
+var http = require("http");
+
+var server = http.createServer();
+
+function handleRequest(req, res) {
+	res.writeHead(200, {"Content-Type": "text/plain"});
+	res.write("Hello World!");
+	res.end();
+}
+
+server.on("request", handleRequest);
+
+server.listen(8080);
+
+/*
+ * use : cd "directory" to navigate in the console window (command window) to use nodeJs
+ * you will have to insert each individual command to get to each directory until you reach the one where your
+ * JavaScript file is located.
+ * For example if your Js file is located in: C:\Users\"username"\Documents\NodeJs\Tuts\Tut1\sever.js
+ * you would have to write: cd Documents (press Enter) - which would take you to the Documents directory
+ * Then in the next line: cd NodeJs (press Enter) - which would take you to the Documents\NodeJs directory
+ * and so on, until you reach the directory directly containing your JavaScript file.
+ * It is only once you have reached this directory that you can type: "node server.js" in the command console
+ * and then insert "localhost:8080" in the URL of your browser.
+ * My first challenge to getting this to work was because I had never used the command console before, so everytime
+ * I requested the server.js file on the console, it could never find the directory, thus never rendering the 
+ * the message "Hello World!" on the browser.
+ * The code above is written in a normal text editor and saved as a JavaScript file.
+ * That's one of the advantages of NodeJs - It's written in JavaScript ;)
+ * Good stuff!
+*/
+ 
